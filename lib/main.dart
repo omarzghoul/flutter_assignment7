@@ -26,11 +26,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String fontStyle = "Righteous";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        color: Colors.blueGrey,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +47,10 @@ class _HomeState extends State<Home> {
                     ));
                   });
                 },
-                child: Text("First screen"),
+                child: Text(
+                  "First screen",
+                  style: TextStyle(fontFamily: fontStyle),
+                ),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -57,7 +62,10 @@ class _HomeState extends State<Home> {
                     ));
                   });
                 },
-                child: Text("second screen"),
+                child: Text(
+                  "second screen",
+                  style: TextStyle(fontFamily: fontStyle),
+                ),
               )
             ],
           ),

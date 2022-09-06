@@ -13,16 +13,22 @@ class First_screen extends StatefulWidget {
 class _First_screenState extends State<First_screen> {
   List myList = ["Orange", "Apple", "Mango"];
   String selctedItem = "Orange";
+  String fontStyle = "GloriaHallelujah";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        color: Colors.brown,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("First screen"),
+              Text(
+                "First screen",
+                style: TextStyle(
+                    fontFamily: fontStyle, fontSize: 20, color: Colors.white),
+              ),
               ElevatedButton.icon(
                   onPressed: () {
                     setState(() {
@@ -34,10 +40,25 @@ class _First_screenState extends State<First_screen> {
                     });
                   },
                   icon: Icon(Icons.home),
-                  label: Text("home screen")),
+                  label: Text(
+                    "home screen",
+                    style: TextStyle(
+                      fontFamily: fontStyle,
+                      fontSize: 20,
+                    ),
+                  )),
               DropdownButton(
+                dropdownColor: Colors.brown,
                 items: myList
-                    .map((e) => DropdownMenuItem(value: e, child: Text("$e")))
+                    .map((e) => DropdownMenuItem(
+                        value: e,
+                        child: Text(
+                          "$e",
+                          style: TextStyle(
+                              fontFamily: fontStyle,
+                              fontSize: 20,
+                              color: Colors.white),
+                        )))
                     .toList(),
                 value: selctedItem,
                 onChanged: (value) {
